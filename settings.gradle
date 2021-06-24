@@ -1,0 +1,2 @@
+rootProject.name = "Launcher RecyclerView Horizontal"
+include ':app'
