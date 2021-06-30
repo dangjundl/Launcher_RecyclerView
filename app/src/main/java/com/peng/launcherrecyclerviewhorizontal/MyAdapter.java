@@ -23,6 +23,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     private List<ResolveInfo> MyAppList;
     private PackageManager myPackageManager;
+    private Context context;
     private OnItemClickListener mListener = null ;
 
     public void setOnItemClickListener(OnItemClickListener listener){
@@ -46,9 +47,9 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         }
     }
 
-    MyAdapter(List<ResolveInfo> l ,PackageManager m){
-        MyAppList = l;
-        myPackageManager = m;
+    MyAdapter(List<ResolveInfo> MyAppList,Context context){
+       this.MyAppList = MyAppList;
+       this.context = context;
 
     }
 
@@ -65,6 +66,8 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
         MyViewHolder myViewHolder = (MyViewHolder) holder;
         ResolveInfo resolveInfo = MyAppList.get(position);
+
+        myPackageManager = context.getPackageManager();
 
         myViewHolder.ivPicture.setImageDrawable(resolveInfo.loadIcon(myPackageManager));
         myViewHolder.tvPrice.setText(resolveInfo.loadLabel(myPackageManager));

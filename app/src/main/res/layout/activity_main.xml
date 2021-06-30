@@ -3,7 +3,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:orientation="vertical" >
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+
+    <RadioGroup
+        android:id="@+id/radio_Group"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <RadioButton
+        android:id="@+id/line1"
+        android:text="1line"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+        <RadioButton
+            android:id="@+id/line2"
+            android:padding="10dp"
+            android:text="2line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <RadioButton
+            android:id="@+id/line3"
+            android:padding="10dp"
+            android:text="3line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <RadioButton
+            android:id="@+id/line4"
+            android:padding="10dp"
+            android:text="4line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <RadioButton
+            android:id="@+id/line5"
+            android:padding="10dp"
+            android:text="5line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RadioGroup>
+
+    <Button
+        android:layout_marginLeft="20dp"
+        android:id="@+id/line_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="라인수변경"/>
+
+   </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
