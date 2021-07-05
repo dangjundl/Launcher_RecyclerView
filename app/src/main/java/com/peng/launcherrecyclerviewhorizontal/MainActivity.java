@@ -15,7 +15,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
     RadioGroup radioGroup;
+    private TextView calender;
+    private SimpleDateFormat mFormat = new SimpleDateFormat("yyyy/M/d"); // 날짜 포맷
+
     int nums = 2;
 
     PackageManager myPackageManager;
@@ -37,8 +43,14 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         // 화면을 landscape(가로) 화면으로 고정하고 싶은 경우
 
-        linebutton = (Button) findViewById(R.id.line_edit);
-        radioGroup = findViewById(R.id.radio_Group);
+//        linebutton = (Button) findViewById(R.id.line_edit);
+//        radioGroup = findViewById(R.id.radio_Group);
+
+        calender = (TextView) findViewById(R.id.calender_text);
+
+        Date date = new Date();
+        String time = mFormat.format(date);
+        calender.setText(time);
 
         myPackageManager = getPackageManager();
 
@@ -55,47 +67,47 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(myAdapter);
 
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+//        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+//
+//
+//                switch (i){
+//                    case R.id.line1:
+//                            nums = 1;
+//                            break;
+//
+//                    case R.id.line2:
+//                        nums = 2;
+//                        break;
+//                    case R.id.line3:
+//                        nums = 3;
+//                        break;
+//                    case R.id.line4:
+//                        nums = 4;
+//                        break;
+//                    case R.id.line5:
+//                        nums = 5;
+//                        break;
+//                }
+//
+//            }
+//        });
+//
 
 
-                switch (i){
-                    case R.id.line1:
-                            nums = 1;
-                            break;
-
-                    case R.id.line2:
-                        nums = 2;
-                        break;
-                    case R.id.line3:
-                        nums = 3;
-                        break;
-                    case R.id.line4:
-                        nums = 4;
-                        break;
-                    case R.id.line5:
-                        nums = 5;
-                        break;
-                }
-
-            }
-        });
-
-
-
-        linebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Log.d("dsadasd", "onClick: "+nums);
-               mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL,false);
-                mRecyclerView.setHasFixedSize(false);
-            mRecyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), nums,LinearLayoutManager.HORIZONTAL,false));
-           mRecyclerView.addItemDecoration(new MovieItemDecoration(getApplicationContext()));
-
-            }
-        });
+//        linebutton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Log.d("dsadasd", "onClick: "+nums);
+//               mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL,false);
+//                mRecyclerView.setHasFixedSize(false);
+//            mRecyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), nums,LinearLayoutManager.HORIZONTAL,false));
+//           mRecyclerView.addItemDecoration(new MovieItemDecoration(getApplicationContext()));
+//
+//            }
+//        });
 
 
 
