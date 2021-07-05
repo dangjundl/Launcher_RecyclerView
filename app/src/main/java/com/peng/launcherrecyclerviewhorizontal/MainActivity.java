@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
     RadioGroup radioGroup;
-    int nums = 4;
+    int nums = 2;
 
     PackageManager myPackageManager;
     Button linebutton;

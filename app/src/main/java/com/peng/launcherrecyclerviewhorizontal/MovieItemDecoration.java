@@ -17,7 +17,7 @@ public class MovieItemDecoration extends RecyclerView.ItemDecoration{
 
     public MovieItemDecoration(Context context) {
 
-        size10 = dpToPx(context, 5);
+        size10 = dpToPx(context, 10);
         size5 = dpToPx(context, 5);
     }
 
